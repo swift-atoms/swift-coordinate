@@ -1,8 +1,5 @@
 @_exported public import Vector
 
-/// An N-dimensional coordinate representation in a caller-established frame.
-/// Coordinates alone do not identify the frame. Use Tagged or an explicit frame
-/// value when values from different references must remain distinct.
 public struct Coordinate<let N: Int, Scalar> {
     public let components: Vector<N, Scalar>
 

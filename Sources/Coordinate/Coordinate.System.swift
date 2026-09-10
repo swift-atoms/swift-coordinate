@@ -1,7 +1,5 @@
 extension Coordinate {
-    /// A coordinate system maps independently owned points to/from coordinates.
-    /// The mapping may capture a runtime reference and need not be affine.
-    /// Its owner must supply mutually inverse mappings on their supported domain.
+
     public struct System<Point, Failure: Swift.Error> {
         private let encode: (Point) throws(Failure) -> Coordinate
         private let decode: (Coordinate) throws(Failure) -> Point
