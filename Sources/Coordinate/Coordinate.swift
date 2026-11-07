@@ -4,7 +4,6 @@ public struct Coordinate<let N: Int, Scalar> {
     public let components: Vector<N, Scalar>
 
     public init(components: Vector<N, Scalar>) { self.components = components }
-    public subscript(index: Int) -> Scalar { components[index] }
 }
 
 extension Coordinate: Equatable where Scalar: Equatable {}
@@ -18,4 +17,8 @@ extension Coordinate where N == 1 {
 
 extension Coordinate: Comparable where N == 1, Scalar: Comparable {
     public static func < (lhs: Self, rhs: Self) -> Bool { lhs[0] < rhs[0] }
+}
+
+extension Coordinate {
+    public subscript(index: Int) -> Scalar { components[index] }
 }
