@@ -22,3 +22,14 @@ extension Coordinate: Comparable where N == 1, Scalar: Comparable {
 extension Coordinate {
     public subscript(index: Int) -> Scalar { components[index] }
 }
+
+extension Coordinate {
+
+    public init(_ components: consuming InlineArray<N, Scalar>) {
+        self.init(components: Vector(components))
+    }
+
+    public init(repeating value: Scalar) {
+        self.init(components: Vector(repeating: value))
+    }
+}
