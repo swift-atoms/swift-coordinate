@@ -1,4 +1,4 @@
-@_exported public import Vector
+public import Vector
 
 public struct Coordinate<let N: Int, Scalar> {
     public let components: Vector<N, Scalar>
